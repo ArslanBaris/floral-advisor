@@ -6,14 +6,20 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@mantine/core/styles.css';
 import { MantineProvider, createTheme } from '@mantine/core';
-
+import { AppProvider } from "../Context/AppContext"
+import { useState } from 'react';
 const theme = createTheme({
   /** Put your mantine theme override here */
 });
 
 export default function App({ Component, pageProps }) {
-  return(
+
+  const [selectedLanguage, setSelectedLanguage] = useState("tr");
+
+  return (
     <MantineProvider theme={theme}>
-   <Component {...pageProps} />
-  </MantineProvider>)
+       <AppProvider initialLanguage={selectedLanguage} >
+      <Component {...pageProps} />
+      </AppProvider>
+    </MantineProvider>)
 }
