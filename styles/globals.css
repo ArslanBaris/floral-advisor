@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+    background: #FDF7FB;
+}
+
+.navbar {
+  background-color: transparent; /* Navbar arkaplan rengi */
+  text-align: center; /* Metin ortalaması */
+  padding: 10px 0; /* Üst ve alt boşluklar */
+}
+
+.navbar-title {
+  margin: 0; /* Başlığın kenarlarda boşluğu olmaması için */
+  font-size: 30px; /* Başlık yazı boyutu */
+  color:black;
+  font-style: italic;
+  font-weight: 700px;
+
+}
+
+.category-card{
+  cursor: pointer;
+  min-height: 200px;
+  text-align: center;
+  
+  
+}
+
