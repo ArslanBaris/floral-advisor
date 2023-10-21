@@ -1,16 +1,76 @@
 import React from "react";
+import { Menu, Button, Text, rem } from '@mantine/core';
+import {
+  IconSettings,
+  IconSearch,
+  IconPhoto,
+  IconMessageCircle,
+  IconTrash,
+  IconArrowsLeftRight,
+  IconCornerRightDown,
+  IconLanguage,
+  IconChevronsDown,
+  IconChevronsLeft,
+} from '@tabler/icons-react';
 
+export default function Navbar(props) {
 
-export default function Navbar() {
-
-
-
+  const { activeIndex, setActiveIndex } = props
 
   return (
     <>
-         <div className="navbar text-center w-100 d-flex justify-content-center" style={{alignItems:"center"}}>
-            <h1 className="navbar-title">Logo</h1>
+      <div className="navbar d-flex justify-content-between align-items-center">
+        <div>
+          {
+            activeIndex != "Categories" &&
+            <Button
+              variant="gradient"
+              // rightSection={<IconChevronsLeft size={14} />}
+              leftSection={<IconChevronsLeft size={14} />}
+              gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+              radius={20}
+              onClick={() => { setActiveIndex("Categories") }}
+            >
+              Back
+            </Button>
+          }
         </div>
+        <div className="navbar-logo">
+          <Text
+            size="40px"
+            fw={900}
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+          >
+            DOVU
+          </Text>
+        </div>
+
+        <div className="navbar-menu">
+          <Menu shadow="xl" width={150}>
+            <Menu.Target>
+              <Button
+                variant="gradient"
+                rightSection={<IconChevronsDown size={14} />}
+                // leftSection={<IconLanguage size={14} />}
+                gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+                radius={20}
+              >
+                EN
+              </Button>
+            </Menu.Target>
+            <Menu.Dropdown>
+              <Menu.Label>Languages</Menu.Label>
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />}>
+                Türkçe
+              </Menu.Item>
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />}>
+                English
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+        </div>
+      </div>
     </>
   );
 }
