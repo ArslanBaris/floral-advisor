@@ -1,8 +1,8 @@
 import { IconArrowLeft, IconArrowBackUp } from '@tabler/icons-react'
 import React, { useContext, useEffect, useState } from 'react'
-import { Col, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import { useForm } from '@mantine/form';
-import { TextInput, Button, Group, Box } from '@mantine/core';
+import { TextInput, Button, Group, Box, ScrollArea } from '@mantine/core';
 import { randomId } from '@mantine/hooks';
 import { useAppContext } from '../../Context/AppContext';
 import GetLocalizedText from '@/Utils/Intl/Index';
@@ -33,9 +33,9 @@ export default function Survey(props) {
   });
 
   return (
-    <>
+    <Container>
       <Row className='d-flex justify-content-center'>
-        <Col lg="10">
+        <Col lg="12">
           <Row>
             <Col lg="6">
               <Row>
@@ -43,44 +43,17 @@ export default function Survey(props) {
                   <IconArrowBackUp size={"30px"} style={{ cursor: "pointer" }} onClick={() => { setActiveIndex("Categories") }} />
                 </Col>
               </Row>
-
               <Questions />
-
             </Col>
-
-
-
             <Col lg="6" className='d-flex justify-content-center'>
               <Result />
-             
             </Col>
             <Col lg="12">
-            <Box maw={340} mx="auto">
-                <TextInput label="Name" placeholder="Name" {...form.getInputProps('name')} />
-                <TextInput mt="md" label="Email" placeholder="Email" {...form.getInputProps('email')} />
-
-
-                <Group justify="center" mt="xl">
-                  <Button
-                    variant="gradient"
-                    onClick={() =>
-                      form.setValues({
-                        name: randomId(),
-                        email: `${randomId()}@test.com`,
-                      })
-                    }
-                  >
-                    Set random values
-                  </Button>
-                </Group>
-              </Box>
             </Col>
           </Row>
         </Col>
-
       </Row>
-
-    </>
+    </Container>
   )
 }
 
