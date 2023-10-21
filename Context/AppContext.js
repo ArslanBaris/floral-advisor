@@ -8,9 +8,10 @@ export const useAppContext = () => {
 
 export const AppProvider = ({ children,initialLanguage = "en" }) => {
     const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
+    const [selectedCategory, setSelectedCategory] = useState();
 
   return (
-    <AppContext.Provider value={{ selectedLanguage }}>
+    <AppContext.Provider value={{ selectedLanguage,selectedCategory,setSelectedCategory }}>
       {children}
     </AppContext.Provider>
   );

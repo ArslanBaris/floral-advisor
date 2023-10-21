@@ -1,6 +1,6 @@
 import React from "react"
 import translations from "./translations"
-import { useAppContext } from "../Context/AppContext"
+import { useAppContext } from "@/Context/AppContext"
 
 const GetLocalizedText = (props) => {
 

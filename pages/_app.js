@@ -5,11 +5,16 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@mantine/core/styles.css';
-import { MantineProvider, createTheme } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
 import { AppProvider } from "../Context/AppContext"
 import { useState } from 'react';
+import Head from 'next/head';
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  defaultGradient: {
+    from: 'orange',
+    to: 'red',
+    deg: 45,
+  },
 });
 
 export default function App({ Component, pageProps }) {
@@ -17,9 +22,21 @@ export default function App({ Component, pageProps }) {
   const [selectedLanguage, setSelectedLanguage] = useState("tr");
 
   return (
-    <MantineProvider theme={theme}>
-       <AppProvider initialLanguage={selectedLanguage} >
-      <Component {...pageProps} />
-      </AppProvider>
-    </MantineProvider>)
+    <>
+
+      <Head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My awesome app</title>
+        <ColorSchemeScript />
+      </Head>
+      <MantineProvider theme={theme}>
+        <AppProvider initialLanguage={selectedLanguage} >
+          <Component {...pageProps} />
+        </AppProvider>
+      </MantineProvider>
+
+    </>
+  )
 }

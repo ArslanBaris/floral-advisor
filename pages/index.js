@@ -2,27 +2,25 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Layout/Navbar'
 import Categories from '../components/Categories/Categories'
-import { useState } from 'react'
-import { Col, Row } from 'reactstrap'
+import { useContext, useState } from 'react'
 import Survey from '@/components/Survey/Survey'
-
-const inter = Inter({ subsets: ['latin'] })
+import { useAppContext } from '../Context/AppContext';
 
 export default function Home() {
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [activeIndex, setActiveIndex] = useState("Categories");
+  const { setSelectedCategory } = useAppContext();
 
   const setCategoryOpt = (category) => {
-    setActiveIndex("1")
+    setActiveIndex("Survey")
     setSelectedCategory(category)
 
   }
 
   const renderPage = (activeIndex) => {
-    if (activeIndex == "0") {
+    if (activeIndex == "Categories") {
       return <Categories setSelectedCategory={setCategoryOpt} />
-    } else if (activeIndex == "1") {
+    } else if (activeIndex == "Survey") {
       return <Survey setActiveIndex={setActiveIndex} />
     }
   }
