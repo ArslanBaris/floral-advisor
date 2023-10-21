@@ -7,6 +7,7 @@ import {
     CarouselControl,
     CarouselIndicators,
     CarouselCaption,
+    Container
 } from "reactstrap";
 import CategoryCard from "./CategoryCard";
 import { categories } from "../data"
@@ -56,7 +57,7 @@ export default function Categories(props) {
     const items = [{ id: 1, name: "Category" }, { id: 2, name: "Survey" }]
 
     return (
-        <>
+        <Container>
             <Row className="d-flex justify-content-center mt-5">
                 <Col lg="7" className="mb-4 text-center">
                     <h1 className="mb-2">Her Anınızda En Güzel Çiçekleri Sunar</h1>
@@ -73,6 +74,6 @@ export default function Categories(props) {
                     </Row>
                 </Col>
             </Row>
-        </>
+        </Container>
     );
 }
