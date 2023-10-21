@@ -28,9 +28,12 @@ export default function Home() {
   return (
     <>
 
-      <Navbar />
-
+      <Navbar activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
+      <div className=''>
       {renderPage(activeIndex)}
+
+      </div>
+
     </>
 
   )
