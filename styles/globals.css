@@ -39,14 +39,24 @@ body {
   color:black;
   font-style: italic;
   font-weight: 700px;
-
 }
 
 .category-card{
   cursor: pointer;
   min-height: 200px;
   text-align: center;
-  
-  
+}
+
+.question-text{
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.hrLine {
+  color: #278FDC;
+  background-color: #278FDC;
+  height: .5;
+  border-color: #278FDC;
+  margin-top: 0;
 }
 
