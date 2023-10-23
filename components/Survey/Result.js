@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card, CardBody, Col, Container, Row } from 'reactstrap'
 import { useForm } from '@mantine/form';
-import { TextInput, Button, Group, Box, ScrollArea, Image, Paper, Text, Blockquote } from '@mantine/core';
+import { TextInput, Button, Group, Box, ScrollArea, Image, Paper, Text, Blockquote, ActionIcon, Textarea } from '@mantine/core';
 import { randomId } from '@mantine/hooks';
-import { IconHeart } from '@tabler/icons-react';
+import { IconCircleChevronLeft, IconCircleChevronRight, IconHeart, IconMailHeart } from '@tabler/icons-react';
+import GetLocalizedText from '@/Utils/Intl/Index';
 
 export default function Result() {
 
@@ -24,8 +25,8 @@ export default function Result() {
     return (
         <Container>
             <Row>
-                <Col xs="12" className='mt-5'>
-                    <Card className='p-0' style={{ width: "auto", minHeight: "350px" }}>
+                <Col xs="12" className='mt-5 mb-4'>
+                    <Card className='p-0' style={{ width: "auto", minHeight: "auto", border: "none" }}>
                         <CardBody className='p-0'>
                             <Image
                                 radius="md"
@@ -36,8 +37,27 @@ export default function Result() {
                 </Col>
             </Row>
             <Row className='d-flex justify-content-center mt-4'>
-                <Col xs="10">
-                    <Blockquote color="yellow" cite="– Forrest Gump" icon={<IconHeart />} mt="xl" style={{fontFamily:"monospace, sans-serif"}}>
+                <Col xs="11" className='mb-2' style={{ float: "right" }} >
+                    <div style={{ float: "right" }}>
+                        <IconCircleChevronLeft className='me-2' style={{ cursor: "pointer", color: "#019FB5" }} />
+                        <IconCircleChevronRight style={{ cursor: "pointer", color: "#019FB5" }} />
+                    </div>
+                </Col>
+                <Col xs="11" className='mb-5'>
+                    <Textarea
+                        radius={0}
+                        minRows={3}
+                        autosize
+                        leftSection={<IconHeart style={{color:"#f59f00"}} />}
+                        label={GetLocalizedText({ id: "result.note" })}
+                        description={GetLocalizedText({ id: "result.enter-note" })}
+                        classNames={{ input: "note-input", section: "note-input-section" }}
+                        // value={"Life is like an npm install – you never know what you are going to get."}
+                    />
+                </Col>
+                <Col xs="11">
+
+                    <Blockquote color="yellow" cite="– Forrest Gump" icon={<IconHeart />} mt="" style={{ fontFamily: "monospace, sans-serif" }}>
                         Life is like an npm install – you never know what you are going to get.
                     </Blockquote>
                 </Col>

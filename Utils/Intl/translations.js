@@ -35,6 +35,16 @@ const translations = {
     en:"Select an answer",
     tr:"Bir cevap seçiniz",
   },
+
+  /*  result */
+  'result.note': {
+    en: 'Note',
+    tr: 'Not',
+  },
+  'result.enter-note': {
+    en: 'Enter your note here.',
+    tr: 'Notunuzu giriniz.',
+  },
   
   
 

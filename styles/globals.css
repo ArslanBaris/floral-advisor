@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background: #FDF7FB;
+  font-family:"Times New Roman, sans-serif" !important
 }
 
 .navbar {
@@ -59,7 +60,7 @@ body {
 
 .hrLine {
   color: #278FDC;
-  background-color: #278FDC;
+  background-color: #1571b86f;
   height: .5;
   border-color: #ffa50069;
   margin-top: 0;
@@ -82,4 +83,28 @@ body {
 
 .navbar-back-button button:focus {
   outline: none;
+}
+
+.note-input{
+  margin-top: 25px !important;
+  border-left: 4px solid #f59f00 !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  outline: none;
+  background-color: #FFFAF0 !important;
+  padding: 50px !important;
+  font-family: monospace, sans-serif !important;
+  font-size: 15px !important;
+}
+
+.note-input-section{
+  background-color: white !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  top:-25px   !important;
+  left: -25px !important;
 }

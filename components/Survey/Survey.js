@@ -37,12 +37,7 @@ export default function Survey(props) {
       <Row className='d-flex justify-content-center'>
         <Col lg="12">
           <Row>
-            <Col lg="6">
-              <Row>
-                <Col lg="12">
-                  <IconArrowBackUp size={"30px"} style={{ cursor: "pointer" }} onClick={() => { setActiveIndex("Categories") }} />
-                </Col>
-              </Row>
+            <Col lg="6" className='mt-5'>
               <Questions />
             </Col>
             <Col lg="6" className='d-flex justify-content-center'>
