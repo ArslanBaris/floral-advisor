@@ -42,7 +42,7 @@ export default function Navbar(props) {
             variant="gradient"
             gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
           >
-            DOVU
+            LOVU
           </Text>
         </div>
 
