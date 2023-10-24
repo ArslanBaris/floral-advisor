@@ -3,6 +3,7 @@ import { Card, CardBody, Col, Row } from "reactstrap";
 import classnames from "classnames";
 import { Text } from "@mantine/core";
 import { setCategoryProp, specialDateRanges } from "@/Utils/Categories/utils";
+import Image from "next/image";
 
 export default function CategoryCard(props) {
 
@@ -55,7 +56,7 @@ export default function CategoryCard(props) {
           <CardBody className="p-0" >
             <Row>
               <Col lg="12">
-                <img src={setCategoryProp(data.category_id, "bg-image")} className={classnames({ "p-4": true })} style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
+                <Image src={setCategoryProp(data.category_id, "bg-image")} className={classnames({ "p-4": true })} style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
               </Col>
               <Col lg="12">
                 <Text
