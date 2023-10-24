@@ -8,31 +8,33 @@ import CakeIcon from '@mui/icons-material/Cake';
 import { Icon24Hours, IconFlower, IconLeaf, IconPlant, IconPlant2, IconSeeding } from '@tabler/icons-react';
 const QuestionInput = ({ question, options, onAnswerChange }) => {
 
-    const { selectedLanguage } = useAppContext();
-
+    const { selectedAnswers } = useAppContext();
+    const selectedAnswer = selectedAnswers.find((answer) => answer.questionId === question.question_id);
     return (
         <div className='mb-4' >
-            <span className='question-text' style={{fontFamily:"Times New Roman, sans-serif"}} >{question.content}</span>
+            <span className='question-text' style={{fontFamily:"Times New Roman, sans-serif", fontSize:"16px"}} >{question.content}</span>
             <Radio.Group style={{fontFamily:"Times New Roman, sans-serif"}}
                 name={`question_${question.question_id}`}
-                label={getStringLocalized("survey.select-answer", selectedLanguage)}
-                // description="This is anonymous"
-                withAsterisk>
+                onChange={(value) =>{ onAnswerChange(value)}}
+                value={selectedAnswer?.answerId}
+                >
 
-                <div mt="xs" className='px-3'>
-                    {options.map((option) => (
+                {/* <div mt="xs" className='px-3'> */}
+                <Group className='px-3 pt-2'>
+                    {options.map((option) => {
+                        return(
                         <Radio
                             icon={IconPlant2}
-                            className='mb-2 mt-2'
+                            className=''
                             style={{cursor:"pointer"}}
-                            size='md'
+                            size='sm'
                             key={option.answer_id}
                             value={option.answer_id.toString()} // Dikkat: value'yu string yapmalısınız
                             label={option.content}
-                            onChange={(value) => onAnswerChange(question.question_id, value)}
                         />
-                    ))}
-                </div>
+                    )})}
+                    </Group>
+                {/* </div> */}
             </Radio.Group>
         </div>
     );
