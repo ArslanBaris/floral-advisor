@@ -17,7 +17,7 @@ import { useAppContext } from "@/Context/AppContext";
 export default function Navbar(props) {
 
   const { activeIndex, setActiveIndex } = props
-  const { selectedLanguage, setSelectedLanguage } = useAppContext();
+  const { selectedLanguage, changeSelectedLanguage } = useAppContext();
 
   return (
     <>
@@ -63,10 +63,10 @@ export default function Navbar(props) {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>Languages</Menu.Label>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{setSelectedLanguage("tr")}} >
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{changeSelectedLanguage("tr")}} >
                 Türkçe
               </Menu.Item>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{setSelectedLanguage("en")}} >
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{changeSelectedLanguage("en")}} >
                 English
               </Menu.Item>
             </Menu.Dropdown>

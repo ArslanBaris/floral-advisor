@@ -9,17 +9,17 @@ import { useAppContext } from '../Context/AppContext';
 export default function Home() {
 
   const [activeIndex, setActiveIndex] = useState("Categories");
-  const { setSelectedCategory } = useAppContext();
+  const { changeSelectedCategory } = useAppContext();
 
   const setCategoryOpt = (category) => {
     setActiveIndex("Survey")
-    setSelectedCategory(category)
+    changeSelectedCategory(category)
 
   }
 
   const renderPage = (activeIndex) => {
     if (activeIndex == "Categories") {
-      return <Categories setSelectedCategory={setCategoryOpt} />
+      return <Categories setCategoryOpt={setCategoryOpt} />
     } else if (activeIndex == "Survey") {
       return <Survey setActiveIndex={setActiveIndex} />
     }
