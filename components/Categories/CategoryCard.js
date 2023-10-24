@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function CategoryCard(props) {
 
-  const { data, setSelectedCategory } = props
+  const { data, setCategoryOpt } = props
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -51,7 +51,7 @@ export default function CategoryCard(props) {
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          onClick={() => setSelectedCategory(data)}
+          onClick={() => setCategoryOpt(data)}
         >
           <CardBody className="p-0" >
             <Row>

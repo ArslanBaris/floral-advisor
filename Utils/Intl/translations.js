@@ -14,6 +14,20 @@ const translations = {
     tr: 'Sil',
   },
 
+  /*  categories */
+  'categories.header-title': {
+    en: 'Presenting the Most Beautiful Flowers for Every Moment',
+    tr: 'Her Anınızda En Güzel Çiçekleri Sunar',
+  },
+  'categories.header-subtitle': {
+    en: 'Find the Perfect Flower in Just a Few Steps',
+    tr: 'Sadece Bir Kaç Adımda Mükemmel Çiçeği Bulun',
+  },
+  'categories.header-description': {
+    en: 'To provide the best flower recommendations, select the most suitable category and answer the questions!',
+    tr: 'En iyi çiçek önerilerini sunabilmemiz için size en uygun kategoriyi seçin ve soruları cevaplandırın !',
+  },
+
   /*  survey */
   'survey.header-title': {
     en: 'Survey',
@@ -44,6 +58,18 @@ const translations = {
   'result.enter-note': {
     en: 'Enter your note here.',
     tr: 'Notunuzu giriniz.',
+  },
+  'result.recomendation-image':{
+    en:'Recomendation',
+    tr:'Öneri',
+  },
+  'survey.suggest':{
+    en:'Suggest',
+    tr:'Öner',
+  },
+  'survey.new-recomendation':{
+    en:'New Recomendation',
+    tr:'Yeni Öneri',
   },
   
   
