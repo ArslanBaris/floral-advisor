@@ -1,12 +1,16 @@
-import React from 'react'
-import { Card, CardBody, Col, Container, Row } from 'reactstrap'
+import React, { useState } from 'react'
+import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
 import { useForm } from '@mantine/form';
-import { TextInput, Button, Group, Box, ScrollArea, Image, Paper, Text, Blockquote, ActionIcon, Textarea } from '@mantine/core';
+import { TextInput, Button, Group, Box, ScrollArea, Paper, Text, Blockquote, ActionIcon, Textarea } from '@mantine/core';
 import { randomId } from '@mantine/hooks';
 import { IconCircleChevronLeft, IconCircleChevronRight, IconHeart, IconMailHeart } from '@tabler/icons-react';
 import GetLocalizedText from '@/Utils/Intl/Index';
-
+import suprize from "@/public/static/images/result/suprize-2.png"
+import Image from 'next/image';
 export default function Result() {
+
+  const [isHovered, setIsHovered] = useState(false);
+
 
     const handleAnswerChange = (questionId, answer) => {
         setAnswers((prevAnswers) => ({
@@ -15,55 +19,88 @@ export default function Result() {
         }));
     };
 
-    const form = useForm({
-        initialValues: {
-            name: '',
-            email: '',
-        },
-    });
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+      }
+    
+      const handleMouseLeave = () => {
+        setIsHovered(false);
+      }
+    
 
     return (
         <Container>
-            <Row>
-                <Col xs="12" className='mt-5 mb-4'>
+           <Row className='d-flex justify-content-center'>
+                {/* <Col xs="12" className='mt-5 mb-2'>
+                    <Text
+                        size="30px"
+                        fw={900}
+                        variant="gradient"
+                        className="text-center"
+                        gradient={{ from: 'blue', to: 'cyan', deg: 135 }}
+                    >
+                        <GetLocalizedText id={"result.recomendation-image"} />
+                    </Text>
+                </Col> */}
+                <Col xs="9" className='mt-2 mb-1'>
+                    <Row>
+                        <Col xs="3">
+                            {/* <Card   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
+                             style={{
+                                borderRadius: "5%",
+                                transform: isHovered ? "scale(1.05)" : "scale(1)",
+                                transition: "all 0.2s ease-in-out",
+                              }}
+                              >
+                                <Image src={suprize1}
+                                    style={{ width: "100%", height: "auto",borderRadius:"5px", cursor:"pointer" }}
+                                    quality={100}
+                                />
+                            </Card> */}
+                        </Col>
+                    </Row>
+                </Col>
+
+                <Col xs="9" className='mt-3 mb-2'>
                     <Card className='p-0' style={{ width: "auto", minHeight: "auto", border: "none" }}>
                         <CardBody className='p-0'>
-                            <Image
+                            {/* <Image
                                 radius="md"
-                                src="https://images.unsplash.com/photo-1688920556232-321bd176d0b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80"
+                                src={suprize1}
                             />
+                             <img src="@/public/static/images/result/suprize1.png" style={{ width: "90%" }} /> */}
+                            <Image src={suprize}
+                                style={{ width: "100%", height: "auto" }}
+                                quality={100}
+                            />
+
                         </CardBody>
                     </Card>
                 </Col>
-            </Row>
-            <Row className='d-flex justify-content-center mt-4'>
-                <Col xs="11" className='mb-2' style={{ float: "right" }} >
+                <Col xs="12" className='mb-4' style={{ float: "right" }} >
                     <div style={{ float: "right" }}>
-                        <IconCircleChevronLeft className='me-2' style={{ cursor: "pointer", color: "#019FB5" }} />
-                        <IconCircleChevronRight style={{ cursor: "pointer", color: "#019FB5" }} />
+                        {/* <Button gradient={{ from: 'blue', to: 'cyan', deg: 135}} variant="gradient">
+                        <GetLocalizedText id={"survey.new-recomendation"} />
+                            </Button> */}
                     </div>
                 </Col>
+            </Row>
+            <Row className='d-flex justify-content-center'>
+               
                 <Col xs="11" className='mb-5'>
                     <Textarea
                         radius={0}
                         minRows={3}
                         autosize
-                        leftSection={<IconHeart style={{color:"#f59f00"}} />}
-                        label={GetLocalizedText({ id: "result.note" })}
-                        description={GetLocalizedText({ id: "result.enter-note" })}
+                        disabled
+                        leftSection={<span style={{ color: "#f59f00" }}><IconHeart  />  <GetLocalizedText id={"result.note"} /></span>}
                         classNames={{ input: "note-input", section: "note-input-section" }}
-                        // value={"Life is like an npm install – you never know what you are going to get."}
+                    // value={"Life is like an npm install – you never know what you are going to get."}
                     />
-                </Col>
-                <Col xs="11">
-
-                    <Blockquote color="yellow" cite="– Forrest Gump" icon={<IconHeart />} mt="" style={{ fontFamily: "monospace, sans-serif" }}>
-                        Life is like an npm install – you never know what you are going to get.
-                    </Blockquote>
                 </Col>
             </Row>
 
-            <Box maw={340} mx="auto">
+            {/* <Box maw={340} mx="auto">
                 <TextInput label="Name" placeholder="Name" {...form.getInputProps('name')} />
                 <TextInput mt="md" label="Email" placeholder="Email" {...form.getInputProps('email')} />
 
@@ -80,7 +117,7 @@ export default function Result() {
                         Set random values
                     </Button>
                 </Group>
-            </Box>
+            </Box> */}
         </Container>
     )
 }

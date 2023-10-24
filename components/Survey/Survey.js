@@ -12,32 +12,12 @@ import Result from './Result';
 
 export default function Survey(props) {
 
-
-  const { selectedCategory } = useAppContext();
-  const initialAnswers = {}; // Boş bir yanıt nesnesi oluşturuyoruz
-  const [answers, setAnswers] = useState(initialAnswers);
-
-  const handleAnswerChange = (questionId, answer) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [questionId]: answer,
-    }));
-  };
-
-  const { setActiveIndex } = props
-  const form = useForm({
-    initialValues: {
-      name: '',
-      email: '',
-    },
-  });
-
   return (
     <Container>
       <Row className='d-flex justify-content-center'>
         <Col lg="12">
           <Row>
-            <Col lg="6" className='mt-5'>
+            <Col lg="6" className='mt-0'>
               <Questions />
             </Col>
             <Col lg="6" className='d-flex justify-content-center'>
