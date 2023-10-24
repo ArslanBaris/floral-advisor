@@ -12,10 +12,12 @@ import {
   IconChevronsDown,
   IconChevronsLeft,
 } from '@tabler/icons-react';
+import { useAppContext } from "@/Context/AppContext";
 
 export default function Navbar(props) {
 
   const { activeIndex, setActiveIndex } = props
+  const { selectedLanguage, setSelectedLanguage } = useAppContext();
 
   return (
     <>
@@ -56,15 +58,15 @@ export default function Navbar(props) {
                 gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
                 radius={20}
               >
-                EN
+                {selectedLanguage.toLocaleUpperCase()}
               </Button>
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>Languages</Menu.Label>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />}>
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{setSelectedLanguage("tr")}} >
                 Türkçe
               </Menu.Item>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />}>
+              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{setSelectedLanguage("en")}} >
                 English
               </Menu.Item>
             </Menu.Dropdown>
