@@ -30,27 +30,21 @@ export default function Categories(props) {
                     <Text
                         size="35px"
                         fw={900}
-                        variant="gradient"
                         className="text-center mb-2"
-                        gradient={{ from: 'blue', to: 'cyan', deg: 135 }}
                     >
                         <GetLocalizedText id="categories.header-title" />
                     </Text>
                     <Text
                         size="22px"
                         fw={900}
-                        variant="gradient"
                         className="text-center mb-3"
-                        gradient={{ from: 'blue', to: 'cyan', deg: 135 }}
                     >
                         <GetLocalizedText id="categories.header-subtitle" />
                     </Text>
                     <Text
                         size="16px"
                         fw={900}
-                        variant="gradient"
                         className="text-center"
-                        gradient={{ from: 'blue', to: 'cyan', deg: 135 }}
                     >
                         <GetLocalizedText id="categories.header-description" />
                     </Text>

@@ -56,15 +56,13 @@ export default function CategoryCard(props) {
           <CardBody className="p-0" >
             <Row>
               <Col lg="12">
-                <Image src={setCategoryProp(data.category_id, "bg-image")} className={classnames({ "p-4": true })} style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
+                <Image src={setCategoryProp(data.category_id, "bg-image")} alt="categry-img" className={classnames({ "p-4": true })} style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
               </Col>
               <Col lg="12">
                 <Text
                  className="mb-3"
                   size="lg"
                   fw={900}
-                  variant="gradient"
-                  gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
                 >
                  {data.name}
                 </Text>
