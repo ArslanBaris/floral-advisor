@@ -49,6 +49,10 @@ const translations = {
     en:"Select an answer",
     tr:"Bir cevap seçiniz",
   },
+  'survey.select_placeholder':{
+    en:"Select an answer",
+    tr:"Bir cevap seçiniz",
+  },
 
   /*  result */
   'result.note': {

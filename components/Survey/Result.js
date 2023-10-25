@@ -3,13 +3,13 @@ import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
 import { useForm } from '@mantine/form';
 import { TextInput, Button, Group, Box, ScrollArea, Paper, Text, Blockquote, ActionIcon, Textarea } from '@mantine/core';
 import { randomId } from '@mantine/hooks';
-import { IconCircleChevronLeft, IconCircleChevronRight, IconHeart, IconMailHeart } from '@tabler/icons-react';
+import { IconCircleChevronLeft, IconCircleChevronRight, IconCopy, IconHeart, IconMailHeart } from '@tabler/icons-react';
 import GetLocalizedText from '@/Utils/Intl/Index';
 import suprize from "@/public/static/images/result/suprize-2.png"
 import Image from 'next/image';
 export default function Result() {
 
-  const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
 
     const handleAnswerChange = (questionId, answer) => {
@@ -21,16 +21,16 @@ export default function Result() {
 
     const handleMouseEnter = () => {
         setIsHovered(true);
-      }
-    
-      const handleMouseLeave = () => {
+    }
+
+    const handleMouseLeave = () => {
         setIsHovered(false);
-      }
-    
+    }
+
 
     return (
         <Container>
-           <Row className='d-flex justify-content-center'>
+            <Row className='d-flex justify-content-center'>
                 {/* <Col xs="12" className='mt-5 mb-2'>
                     <Text
                         size="30px"
@@ -70,6 +70,7 @@ export default function Result() {
                             />
                              <img src="@/public/static/images/result/suprize1.png" style={{ width: "90%" }} /> */}
                             <Image src={suprize}
+                                alt="suprize-img"
                                 style={{ width: "100%", height: "auto" }}
                                 quality={100}
                             />
@@ -86,15 +87,21 @@ export default function Result() {
                 </Col>
             </Row>
             <Row className='d-flex justify-content-center'>
-               
+
                 <Col xs="11" className='mb-5'>
                     <Textarea
-                        radius={0}
                         minRows={3}
                         autosize
-                        disabled
-                        leftSection={<span style={{ color: "#f59f00" }}><IconHeart  />  <GetLocalizedText id={"result.note"} /></span>}
+                        radius="md"
+                        // disabled
+                        // leftSection={<span style={{ color: "#f59f00" }}><IconHeart  />  <GetLocalizedText id={"result.note"} /></span>}
                         classNames={{ input: "note-input", section: "note-input-section" }}
+                        rightSection={
+                            <ActionIcon variant="outline" color="orange" aria-label="Settings">
+                                <IconCopy style={{ width: '70%', height: '70%' }} stroke={1.5} />
+                            </ActionIcon>
+                        }
+
                     // value={"Life is like an npm install – you never know what you are going to get."}
                     />
                 </Col>
