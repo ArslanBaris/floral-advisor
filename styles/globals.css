@@ -25,7 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background: #FDF7FB;
-  font-family:"Times New Roman, sans-serif" !important
+  font-family: 'Nunito Sans', sans-serif !important
 }
 
 .navbar {
@@ -87,7 +87,7 @@ body {
 
 .note-input{
   margin-top: 25px !important;
-  border-left: 4px solid #f59f00 !important;
+  border-left: 4px solid orange !important;
   border-top: none !important;
   border-right: none !important;
   border-bottom: none !important;
@@ -101,10 +101,9 @@ body {
 }
 
 .note-input-section{
-  background-color: white !important;
   border-radius: 50% !important;
-  width: 80px !important;
+  width: 50px !important;
   height: 50px !important;
-  top:-25px   !important;
-  left: -25px !important;
+  top:auto   !important;
+  cursor: pointer;
 }

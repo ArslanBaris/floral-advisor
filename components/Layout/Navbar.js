@@ -22,7 +22,7 @@ export default function Navbar(props) {
   return (
     <>
       <div className="navbar d-flex justify-content-between align-items-center">
-        <div>
+        <div style={{minWidth:"130px"}}>
           {
             activeIndex != "Categories" &&
             <Button
@@ -39,35 +39,37 @@ export default function Navbar(props) {
         </div>
         <div className="navbar-logo">
           <Text
-            size="40px"
+            size="60px"
             fw={900}
-            variant="gradient"
-            gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
           >
             LOVU
           </Text>
         </div>
 
-        <div className="navbar-menu">
+        <div style={{minWidth:"130px"}} className="navbar-menu">
           <Menu shadow="xl" width={150}>
             <Menu.Target>
               <Button
+              style={{minWidth:"130px"}}
                 variant="gradient"
                 rightSection={<IconChevronsDown size={14} />}
                 // leftSection={<IconLanguage size={14} />}
                 gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
                 radius={20}
               >
-                {selectedLanguage.toLocaleUpperCase()}
+                {selectedLanguage == "tr" ? 
+                  <> <span className="fi fi-tr me-2"></span> <span>Türkçe</span></>   : 
+                  <>     <span style={{marginRight:"12px", marginLeft:"3px"}}> 🌎 </span> <span>English</span></> 
+                  }
               </Button>
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>Languages</Menu.Label>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{changeSelectedLanguage("tr")}} >
-                Türkçe
+              <Menu.Item onClick={()=>{changeSelectedLanguage("tr")}} >
+              <span className="fi fi-tr me-2"></span>  Türkçe
               </Menu.Item>
-              <Menu.Item leftSection={<IconLanguage style={{ width: rem(14), height: rem(14) }} />} onClick={()=>{changeSelectedLanguage("en")}} >
-                English
+              <Menu.Item onClick={()=>{changeSelectedLanguage("en")}} >
+              <span style={{marginRight:"12px", marginLeft:"3px"}}> 🌎 </span>  English
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>
