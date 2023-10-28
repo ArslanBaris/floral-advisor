@@ -1,5 +1,5 @@
 import birthday from "@/public/static/images/categories/birthday-1.png"
-import anniversary from "@/public/static/images/categories/anniversary-1.png"
+import anniversary from "@/public/static/images/categories/anniversary-2.png"
 import couple from "@/public/static/images/categories/couple-1.png"
 import getWellSoon from "@/public/static/images/categories/get-well-soon-1.png"
 import newWork from "@/public/static/images/categories/new-work-1.png"
@@ -46,7 +46,7 @@ export const setCategoryProp = (id, type) => {
         return anniversary
       }
       else if (type === "bg-color") {
-        return '#F9FCEF'
+        return '#FEDED2'
       }
     }
     if (id === 4) { // yeni iş

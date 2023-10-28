@@ -824,7 +824,7 @@ export const categories =
             },
             {
                 "category_id": 3,
-                "name": "Wedding Anniversary",
+                "name": "Anniversary",
                 "questions": [
                     {
                         "question_id": 9,

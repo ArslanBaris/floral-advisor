@@ -38,7 +38,7 @@ export default function CategoryCard(props) {
 
   return (
     <>
-      <Col lg="4" xs="6" sm="6" className="mb-4">
+      <Col lg="4" xs="6" sm="4" className="mb-4 p-3">
         <Card className={classnames({
           "mb-2 category-card": true,
           "shadow-lg": isHovered
@@ -54,14 +54,14 @@ export default function CategoryCard(props) {
           onClick={() => setCategoryOpt(data)}
         >
           <CardBody className="p-0" >
-            <Row>
-              <Col lg="12">
-                <Image src={setCategoryProp(data.category_id, "bg-image")} alt="categry-img" className={classnames({ "p-4": true })} style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
+            <Row style={{flexDirection: "column"}}>
+              <Col lg="12" > 
+                <Image className="category-img" src={setCategoryProp(data.category_id, "bg-image")} alt="category-img" style={{ width: "100%", height: "auto", borderRadius: "6%" }} />
               </Col>
-              <Col lg="12">
+              <Col lg="12" style={{marginTop:"auto"}}>
                 <Text
-                 className="mb-3"
-                  size="lg"
+                 className="category-name mb-3"
+                 style={{marginTop:"auto"}}
                   fw={900}
                 >
                  {data.name}

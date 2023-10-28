@@ -28,16 +28,14 @@ export default function Categories(props) {
             <Row className="d-flex justify-content-center mt-5">
                 <Col lg="7" className="mb-4 text-center">
                     <Text
-                        size="35px"
+                        className="categories-header-title text-center mb-2"
                         fw={900}
-                        className="text-center mb-2"
                     >
                         <GetLocalizedText id="categories.header-title" />
                     </Text>
                     <Text
-                        size="22px"
+                        className="categories-header-subtitle text-center mb-3"
                         fw={900}
-                        className="text-center mb-3"
                     >
                         <GetLocalizedText id="categories.header-subtitle" />
                     </Text>
@@ -50,7 +48,7 @@ export default function Categories(props) {
                     </Text>
                 </Col>
                 <Col lg="7">
-                    <Row>
+                    <Row >
                         {
                             bulkData.categories.map((category) => (
                                 <CategoryCard data={category} key={category.category_id} setCategoryOpt={setCategoryOpt} />
