@@ -17,10 +17,10 @@ export default function Survey(props) {
       <Row className='d-flex justify-content-center'>
         <Col lg="12">
           <Row>
-            <Col lg="6" className='mt-0'>
+            <Col md="6" className='mt-0'>
               <Questions />
             </Col>
-            <Col lg="6" className='d-flex justify-content-center'>
+            <Col md="6" className='d-flex justify-content-center'>
               <Result />
             </Col>
             <Col lg="12">

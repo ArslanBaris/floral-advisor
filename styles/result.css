@@ -1,0 +1,28 @@
+
+
+.note-input{
+    margin-top: 25px !important;
+    border-left: 4px solid orange !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    outline: none;
+    background-color: #FFFAF0 !important;
+    padding: 50px !important;
+    font-family: monospace, sans-serif !important;
+    font-size: 15px !important;
+  }
+  
+  .note-input-section{
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    top:auto   !important;
+    cursor: pointer;
+  }
+  .question-text {
+    font-size: 17px;
+    font-weight: 500;
+  }  

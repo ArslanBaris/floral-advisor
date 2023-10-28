@@ -28,36 +28,6 @@ body {
   font-family: 'Nunito Sans', sans-serif !important
 }
 
-.navbar {
-  background-color: transparent;
-  /* Navbar arkaplan rengi */
-  text-align: center;
-  /* Metin ortalaması */
-  padding: 10px 0;
-  /* Üst ve alt boşluklar */
-}
-
-.navbar-title {
-  margin: 0;
-  /* Başlığın kenarlarda boşluğu olmaması için */
-  font-size: 30px;
-  /* Başlık yazı boyutu */
-  color: black;
-  font-style: italic;
-  font-weight: 700px;
-}
-
-.category-card {
-  cursor: pointer;
-  min-height: 200px;
-  text-align: center;
-}
-
-.question-text {
-  font-size: 17px;
-  font-weight: 500;
-}
-
 .hrLine {
   color: #278FDC;
   background-color: #1571b86f;
@@ -66,44 +36,14 @@ body {
   margin-top: 0;
 }
 
-.navbar {
-  /* background-image: linear-gradient(-45deg, #cb2b2b85, #360fac7f); */
-  /* color: #fff; */
-  padding:  15px 20px !important;
+.button-text {
+  display: inline-block;
+  margin-left: 4px;
 }
 
-.navbar-logo {
-  font-size: 24px;
-  font-weight: bold;
+@media (max-width: 768px) {
+  .button-text {
+    display: none;
+  }
 }
 
-.navbar-back-button button:hover {
-  text-decoration: underline;
-}
-
-.navbar-back-button button:focus {
-  outline: none;
-}
-
-.note-input{
-  margin-top: 25px !important;
-  border-left: 4px solid orange !important;
-  border-top: none !important;
-  border-right: none !important;
-  border-bottom: none !important;
-  border-top-left-radius: 0%;
-  border-bottom-left-radius: 0%;
-  outline: none;
-  background-color: #FFFAF0 !important;
-  padding: 50px !important;
-  font-family: monospace, sans-serif !important;
-  font-size: 15px !important;
-}
-
-.note-input-section{
-  border-radius: 50% !important;
-  width: 50px !important;
-  height: 50px !important;
-  top:auto   !important;
-  cursor: pointer;
-}

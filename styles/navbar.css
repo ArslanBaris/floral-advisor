@@ -1,0 +1,45 @@
+.navbar {
+    background-color: transparent;
+    /* Navbar arkaplan rengi */
+    text-align: center;
+    /* Metin ortalaması */
+    /* padding: 10px 0; */
+    padding:  15px 20px !important;
+    /* Üst ve alt boşluklar */
+  }
+  
+  .navbar-title {
+    margin: 0;
+    /* Başlığın kenarlarda boşluğu olmaması için */
+    font-size: 30px;
+    /* Başlık yazı boyutu */
+    color: black;
+    font-style: italic;
+    font-weight: 700px;
+  }
+  
+
+.navbar-text {
+    font-size: 50px !important;
+    font-weight: bold !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-text {
+        font-size: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-text {
+        font-size: 30px !important;
+    }
+}
+
+.navbar-back-button button:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-back-button button:focus {
+    outline: none;
+  }

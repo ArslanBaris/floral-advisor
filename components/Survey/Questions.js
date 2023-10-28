@@ -36,7 +36,7 @@ export default function Questions() {
 
     return (
         <>
-            <Row className='d-flex justify-content-center'>
+            <Row className='d-flex justify-content-center p-2'>
                 {/* <Col lg="12" >
                     <Text
                         size="30px"
@@ -73,7 +73,7 @@ export default function Questions() {
                     <hr className='hrLine' />
                 </Col>
             </Row>
-            <Row className='d-flex justify-content-center p-2'>
+            <Row className='d-flex justify-content-center p-3'>
                 {/* <div style={{ maxHeight: '600px', overflowY: 'auto' }}> */}
                 <Card style={{ }}>
                     <CardBody>
