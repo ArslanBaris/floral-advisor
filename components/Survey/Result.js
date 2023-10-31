@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
 import { useForm } from '@mantine/form';
 import { TextInput, Button, Group, Box, ScrollArea, Paper, Text, Blockquote, ActionIcon, Textarea } from '@mantine/core';
@@ -7,17 +7,11 @@ import { IconCircleChevronLeft, IconCircleChevronRight, IconCopy, IconHeart, Ico
 import GetLocalizedText from '@/Utils/Intl/Index';
 import suprize from "@/public/static/images/result/suprize-2.png"
 import Image from 'next/image';
-export default function Result() {
+export default function Result({ recommendedText, recommendedFlowers }) {
 
     const [isHovered, setIsHovered] = useState(false);
-
-
-    const handleAnswerChange = (questionId, answer) => {
-        setAnswers((prevAnswers) => ({
-            ...prevAnswers,
-            [questionId]: answer,
-        }));
-    };
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [selectedFlower, setSelectedFlower] = useState();
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -27,6 +21,13 @@ export default function Result() {
         setIsHovered(false);
     }
 
+    useEffect(() => {
+        if (recommendedFlowers.length > 0) {
+            setIsLoaded(true)
+            setSelectedFlower(recommendedFlowers[0])
+        }
+
+    }, [recommendedFlowers])
 
     return (
         <Container>
@@ -45,18 +46,29 @@ export default function Result() {
                 <Col xs="9" className='mt-2 mb-1'>
                     <Row>
                         <Col xs="3">
-                            {/* <Card   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
-                             style={{
-                                borderRadius: "5%",
-                                transform: isHovered ? "scale(1.05)" : "scale(1)",
-                                transition: "all 0.2s ease-in-out",
-                              }}
-                              >
-                                <Image src={suprize1}
-                                    style={{ width: "100%", height: "auto",borderRadius:"5px", cursor:"pointer" }}
-                                    quality={100}
-                                />
-                            </Card> */}
+                            {/* {
+                                isLoaded &&
+                                recommendedFlowers.length > 0 && recommendedFlowers.map((flower, index) => {
+                                    <Card key={index} 
+                                    onMouseEnter={handleMouseEnter} 
+                                    onMouseLeave={handleMouseLeave}
+                                    onClick={() => setSelectedFlower(flower)}
+                                        style={{
+                                            borderRadius: "5%",
+                                            transform: isHovered ? "scale(1.05)" : "scale(1)",
+                                            transition: "all 0.2s ease-in-out",
+                                        }}
+                                    >
+                                        <Image src={flower?.image_url}
+                                            style={{ width: "100%", height: "auto", borderRadius: "5px", cursor: "pointer" }}
+                                            quality={100}
+                                            width={500}
+
+                                            height={500}
+                                        />
+                                    </Card>
+                                })
+                            } */}
                         </Col>
                     </Row>
                 </Col>
@@ -64,16 +76,23 @@ export default function Result() {
                 <Col xs="9" className='mt-3 mb-2'>
                     <Card className='p-0' style={{ width: "auto", minHeight: "auto", border: "none" }}>
                         <CardBody className='p-0'>
-                            {/* <Image
-                                radius="md"
-                                src={suprize1}
-                            />
-                             <img src="@/public/static/images/result/suprize1.png" style={{ width: "90%" }} /> */}
-                            <Image src={suprize}
+                            {
+                                !isLoaded ?
+                                 <Image src={suprize}
+                                 alt="suprize-img"
+                                 style={{ width: "100%", height: "auto" }}
+                                 quality={100}
+                             />
+                             :
+                               <Image src={selectedFlower?.image_url}
                                 alt="suprize-img"
                                 style={{ width: "100%", height: "auto" }}
                                 quality={100}
+                                width={300}
+
+                                height={300}
                             />
+                        }
 
                         </CardBody>
                     </Card>
@@ -101,8 +120,7 @@ export default function Result() {
                                 <IconCopy style={{ width: '70%', height: '70%' }} stroke={1.5} />
                             </ActionIcon>
                         }
-
-                    // value={"Life is like an npm install – you never know what you are going to get."}
+                        value={recommendedText}
                     />
                 </Col>
             </Row>

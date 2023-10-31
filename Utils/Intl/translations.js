@@ -53,6 +53,14 @@ const translations = {
     en:"Select an answer",
     tr:"Bir cevap seçiniz",
   },
+  'survey.email.modal.title':{
+    en:"Enter your email address and get your recomendation",
+    tr:"Mail adresini gir ve önerini al",
+  },
+  'survey.email.modal.button':{
+    en: "Get My Recomendation",
+    tr: "Önerimi Al",
+  },
 
   /*  result */
   'result.note': {
@@ -74,6 +82,24 @@ const translations = {
   'survey.new-recomendation':{
     en:'New Recomendation',
     tr:'Yeni Öneri',
+  },
+  
+  /*  form */
+  'form.name.validation': {
+    en: 'Name must have at least 3 letters',
+    tr: 'İsim en az 3 harf içermelidir',
+  },
+  'form.receiver.validation': {
+    en: 'Receiver name must have at least 3 letters',
+    tr: 'Alıcı ismi en az 3 harf içermelidir',
+  },
+  'form.email.validation': {
+    en: 'Invalid email',
+    tr: 'Geçersiz email',
+  },
+  'form.select.validation': {
+    en: 'Please select',
+    tr: 'Lütfen seçiniz',
   },
   
   

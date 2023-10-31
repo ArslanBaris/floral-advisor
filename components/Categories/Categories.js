@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Col,
     Row,
@@ -14,6 +14,7 @@ import { categories } from "../data"
 import { useAppContext } from "@/Context/AppContext";
 import { Text } from "@mantine/core";
 import GetLocalizedText from "@/Utils/Intl/Index";
+import axios from "axios";
 
 export default function Categories(props) {
 
@@ -22,6 +23,45 @@ export default function Categories(props) {
     const bulkData = selectedLanguage == "en" ? categories.en : categories.tr;
 
     const items = [{ id: 1, name: "Category" }, { id: 2, name: "Survey" }]
+
+    useEffect(() => {
+        getCategories();
+    }, []);
+
+    const getCategories = async () => {
+        let body = {
+            "receiver_name": "Çağrı",
+            "sender_name": "Ataol",
+            "email": "ataolbalkar97@gmail.com",
+            "category_id": 1,
+            "language": "Türkçe",
+            "answers": [{
+                "question_id": 1,
+                "answer_id": 3
+            },
+            {
+                "question_id": 2,
+                "answer_id": 6
+            },
+            {
+                "question_id": 3,
+                "answer_id": 13
+            },
+            {
+                "question_id": 4,
+                "answer_id": 18
+            }]
+        }
+
+        // await axios.post('/api/hello/test', body)
+        // .then((response) => {
+        //     console.log(response.data)
+        // }
+        // ).catch((error) => {
+        //     console.log(error)
+        // })
+
+    }
 
     return (
         <Container>
