@@ -3,10 +3,7 @@ import { Group, Radio, Select } from '@mantine/core';
 import { Card, CardBody } from 'reactstrap';
 import GetLocalizedText from '@/Utils/Intl/Index';
 import { useAppContext } from '@/Context/AppContext';
-import { getStringLocalized } from '@/Utils/Intl/utils';
-import CakeIcon from '@mui/icons-material/Cake';
-import { Icon24Hours, IconFlower, IconLeaf, IconPlant, IconPlant2, IconSeeding } from '@tabler/icons-react';
-const QuestionInput = ({ question, options, onAnswerChange }) => {
+const QuestionInput = ({ form,question, options, onAnswerChange }) => {
 
     const { selectedAnswers } = useAppContext();
     const selectedAnswer = selectedAnswers.find((answer) => answer.questionId === question.question_id);
@@ -24,16 +21,19 @@ const QuestionInput = ({ question, options, onAnswerChange }) => {
         return optionsList
     }
 
+    // console.log({...form.getInputProps(`select-${question.question_id}`)})
+
     return (
         <div className='mb-4' >
             {/* <span className='question-text' style={{ fontFamily: "Times New Roman, sans-serif", fontSize: "16px" }} >{question.content}</span> */}
             <Select
+                withAsterisk
                 label={question.content}
                 placeholder={GetLocalizedText({ id: "survey.select_placeholder" })}
                 data={createAswerData()}
-                value={selectedAnswer?.answerId}
-                onChange={(value) => { onAnswerChange(value) }}
-                
+                // value={selectedAnswer?.answerId}
+                // onChange={(value) => {console.log("ewfgg"); onAnswerChange(value);}}
+                {...form.getInputProps(`question-select-${question.question_id}`)}
             />
             {/* <Radio.Group style={{ fontFamily: "Times New Roman, sans-serif" }}
                 name={`question_${question.question_id}`}
